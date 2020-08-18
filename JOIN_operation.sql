@@ -45,3 +45,15 @@ FROM goal
     JOIN game
     ON id = matchid
 WHERE stadium =  'National Stadium, Warsaw'
+
+-- 8.The example query shows all goals scored in the Germany-Greece quarterfinal.
+-- Instead show the name of all players who scored a goal against Germany.
+
+SELECT DISTINCT(player)
+FROM goal
+    JOIN game
+    ON id = matchid
+WHERE (team1= teamid AND team2='GER')
+    OR (team2 = teamid AND team1 = 'GER')
+
+-- 9.Show teamname and the total number of goals scored.
