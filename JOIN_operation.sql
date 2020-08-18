@@ -57,3 +57,8 @@ WHERE (team1= teamid AND team2='GER')
     OR (team2 = teamid AND team1 = 'GER')
 
 -- 9.Show teamname and the total number of goals scored.
+SELECT teamname, COUNT(*)
+FROM goal x
+    JOIN eteam y
+    ON x.teamid = y.id
+GROUP BY teamname
