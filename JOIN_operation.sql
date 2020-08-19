@@ -80,3 +80,10 @@ FROM game
 WHERE team1 = 'POL'
     OR team2 = 'POL'
 GROUP BY matchid,mdate
+
+-- 12.For every match where 'GER' scored, show matchid, match date and the number of goals scored by 'GER'
+
+SELECT DISTINCT matchid, mdate, COUNT(teamid)
+FROM game JOIN goal ON matchid = id
+WHERE (teamid ='GER')
+GROUP BY  matchid,mdate
